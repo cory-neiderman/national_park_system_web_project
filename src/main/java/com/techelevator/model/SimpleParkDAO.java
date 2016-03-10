@@ -14,18 +14,39 @@ public class SimpleParkDAO implements ParkDAO{
 		park.setName("Glacier National Park");
 		park.setDescription("Lorem ipsum dolor sit amet, amet wisi arcu suspendisse, dolor risus est sodales sociis arcu vel, orci sed magna adipiscing massa interdum. Fermentum rutrum nullam hac, nam sodales eleifend pede a, vel ridiculus cursus varius faucibus in in, dapibus integer nobis sem. Mauris ullam");
 		park.setLocation("Montana");
+		park.setAcreage ("10000");
+		park.setElevation ("13000");
+		park.setMilesOfTrail("100");
+		park.setNumberOfCampsites("20");
+		park.setYearFounded ("1985");
+		park.setClimate ("mild");
+		park.setAnnualVisitorCount ("20000");		
 		parkList.add(park);
 		
 		park = new Park("GCNP");
 		park.setName("Grand Canyon National Park");
 		park.setDescription("Lorem ipsum dolor sit amet, amet wisi arcu suspendisse, dolor risus est sodales sociis arcu vel, orci sed magna adipiscing massa interdum. Fermentum rutrum nullam hac, nam sodales eleifend pede a, vel ridiculus cursus varius faucibus in in, dapibus integer nobis sem. Mauris ullam");
 		park.setLocation("Arizona");
+		park.setAcreage ("12000");
+		park.setElevation ("13000");
+		park.setMilesOfTrail("100");
+		park.setNumberOfCampsites("20");
+		park.setYearFounded ("1985");
+		park.setClimate ("mild");
+		park.setAnnualVisitorCount ("20000");
 		parkList.add(park);
 		
 		park = new Park("CVNP");
 		park.setName("Cuyahoga Valley National Park");
 		park.setDescription("Lorem ipsum dolor sit amet, amet wisi arcu suspendisse, dolor risus est sodales sociis arcu vel, orci sed magna adipiscing massa interdum. Fermentum rutrum nullam hac, nam sodales eleifend pede a, vel ridiculus cursus varius faucibus in in, dapibus integer nobis sem. Mauris ullam");
 		park.setLocation("Ohio");
+		park.setAcreage ("10000");
+		park.setElevation ("13000");
+		park.setMilesOfTrail("100");
+		park.setNumberOfCampsites("20");
+		park.setYearFounded ("1985");
+		park.setClimate ("mild");
+		park.setAnnualVisitorCount ("20000");
 		parkList.add(park);
 	}
 	
@@ -38,9 +59,13 @@ public class SimpleParkDAO implements ParkDAO{
 
 	@Override
 	public Park findParkByCode(String parkCode) {
-		
-
-		return null;
+		Park desired = null;
+		for (Park p : parkList){
+			if(p.getParkCode().equals(parkCode)){
+				desired = p;
+			}
+		}
+		return desired;
 	}
 
 }

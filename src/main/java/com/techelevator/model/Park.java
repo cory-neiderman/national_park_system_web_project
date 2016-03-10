@@ -6,13 +6,13 @@ public class Park {
 	String name;
 	String description;
 	String location;
-	int acreage;
-	int elevation;
-	int milesOfTrail;
-	int numberOfCampsites;
-	int yearFounded;
-	int climate;
-	int annualVisitorCount;
+	String acreage;
+	String elevation;
+	String milesOfTrail;
+	String numberOfCampsites;
+	String yearFounded;
+	String climate;
+	String annualVisitorCount;
 	
 	
 	
@@ -49,59 +49,59 @@ public class Park {
 		this.location = location;
 	}
 
-	public int getAcreage() {
+	public String getAcreage() {
 		return acreage;
 	}
 
-	public void setAcreage(int acreage) {
+	public void setAcreage(String acreage) {
 		this.acreage = acreage;
 	}
 
-	public int getElevation() {
+	public String getElevation() {
 		return elevation;
 	}
 
-	public void setElevation(int elevation) {
+	public void setElevation(String elevation) {
 		this.elevation = elevation;
 	}
 
-	public int getMilesOfTrail() {
+	public String getMilesOfTrail() {
 		return milesOfTrail;
 	}
 
-	public void setMilesOfTrail(int milesOfTrail) {
+	public void setMilesOfTrail(String milesOfTrail) {
 		this.milesOfTrail = milesOfTrail;
 	}
 
-	public int getNumberOfCampsites() {
+	public String getNumberOfCampsites() {
 		return numberOfCampsites;
 	}
 
-	public void setNumberOfCampsites(int numberOfCampsites) {
+	public void setNumberOfCampsites(String numberOfCampsites) {
 		this.numberOfCampsites = numberOfCampsites;
 	}
 
-	public int getYearFounded() {
+	public String getYearFounded() {
 		return yearFounded;
 	}
 
-	public void setYearFounded(int yearFounded) {
+	public void setYearFounded(String yearFounded) {
 		this.yearFounded = yearFounded;
 	}
 
-	public int getClimate() {
+	public String getClimate() {
 		return climate;
 	}
 
-	public void setClimate(int climate) {
+	public void setClimate(String climate) {
 		this.climate = climate;
 	}
 
-	public int getAnnualVisitorCount() {
+	public String getAnnualVisitorCount() {
 		return annualVisitorCount;
 	}
 
-	public void setAnnualVisitorCount(int annualVisitorCount) {
+	public void setAnnualVisitorCount(String annualVisitorCount) {
 		this.annualVisitorCount = annualVisitorCount;
 	}
 
