@@ -6,5 +6,8 @@ import java.util.List;
 public interface ParkDAO {
 
 	public List<Park> readAllParks();
-	public Park findParkByParkCode(String parkCode);
+	
+	
+	public Park findParkByCode(String parkCode);
+	
 }

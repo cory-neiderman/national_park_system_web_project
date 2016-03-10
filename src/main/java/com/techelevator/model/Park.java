@@ -14,6 +14,8 @@ public class Park {
 	int climate;
 	int annualVisitorCount;
 	
+	
+	
 	public Park(String parkCode){
 		this.parkCode=parkCode;
 	}
@@ -22,9 +24,6 @@ public class Park {
 		return parkCode;
 	}
 
-	public void setParkCode(String parkCode) {
-		this.parkCode = parkCode;
-	}
 
 	public String getName() {
 		return name;
