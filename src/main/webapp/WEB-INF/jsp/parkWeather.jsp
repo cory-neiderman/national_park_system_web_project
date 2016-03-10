@@ -17,6 +17,18 @@
 			<img id="logo" src="${logoSrc}" alt="National Park Geek Logo"/>
 		</header>
 		
+		<h1><c:out value="${parkToShow.name}"/></h1>
+		
+		
+		
+		
+		<div class="today"> 
+		<p>${today.high}</p>
+		<p>${today.low}</p>
+		<p>${today.forecast}</p>
+		</div>
+		
+		
 		<table>
 		<tr>
 			<th></th>
@@ -25,11 +37,28 @@
 			<th>Day 3</th>
 			<th>Day 4</th>
 		</tr>
+		<tr>
 			<td>Low</td>
-			<forEach 
-		
-		
-		</table>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>High</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Forecast</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		</table><br>
 		
 		
 		

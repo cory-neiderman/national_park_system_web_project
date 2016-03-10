@@ -8,6 +8,7 @@ public class SimpleParkDAO implements ParkDAO{
 	private List<Park> parkList;
 	
 	public SimpleParkDAO() {
+		
 		parkList = new ArrayList<Park>();
 		
 		Park park = new Park("GNP");
