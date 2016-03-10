@@ -1,5 +1,7 @@
 package com.techelevator.model;
 
+import java.util.List;
+
 public class Park {
 	
 	String parkCode;
@@ -13,6 +15,11 @@ public class Park {
 	String yearFounded;
 	String climate;
 	String annualVisitorCount;
+	String quote;
+	String quoteSource;
+	String entryFee;
+	String numberOfSpecies;
+	List<Weather> parkWeatherList;
 	
 	
 	
@@ -103,6 +110,46 @@ public class Park {
 
 	public void setAnnualVisitorCount(String annualVisitorCount) {
 		this.annualVisitorCount = annualVisitorCount;
+	}
+
+	public String getEntryFee() {
+		return entryFee;
+	}
+
+	public void setEntryFee(String entryFee) {
+		this.entryFee = entryFee;
+	}
+
+	public String getNumberOfSpecies() {
+		return numberOfSpecies;
+	}
+
+	public void setNumberOfSpecies(String numberOfSpecies) {
+		this.numberOfSpecies = numberOfSpecies;
+	}
+
+	public String getQuote() {
+		return quote;
+	}
+
+	public void setQuote(String quote) {
+		this.quote = quote;
+	}
+
+	public String getQuoteSource() {
+		return quoteSource;
+	}
+
+	public void setQuoteSource(String quoteSource) {
+		this.quoteSource = quoteSource;
+	}
+
+	public List<Weather> getParkWeather() {
+		return parkWeatherList;
+	}
+
+	public void setParkWeather(List<Weather> parkWeather) {
+		this.parkWeatherList = parkWeatherList;
 	}
 
 }

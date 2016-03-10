@@ -20,7 +20,11 @@ public class SimpleParkDAO implements ParkDAO{
 		park.setNumberOfCampsites("20");
 		park.setYearFounded ("1985");
 		park.setClimate ("mild");
-		park.setAnnualVisitorCount ("20000");		
+		park.setAnnualVisitorCount ("20000");
+		park.setQuote("Beautiful Park");
+		park.setQuoteSource("John Muir");
+		park.setEntryFee("$3.00");
+		park.setNumberOfSpecies("126");
 		parkList.add(park);
 		
 		park = new Park("GCNP");

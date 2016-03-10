@@ -1,6 +1,7 @@
 <!DOCTYPE>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 
 <html>
@@ -17,16 +18,42 @@
 		</header>
 		
 					<p>
-					<c:url var="parkImgSrc" value="/img/parks/${parkToShow.parkCode}.jpg" />
+					<c:set var="parkImageName" value="${parkToShow.parkCode}"/>
+					<c:url var="parkImgSrc" value="/img/parks/${fn:toLowerCase(parkImageName)}.jpg" />
 					<img src="${parkImgSrc}" alt="Picture of <c:out value="${parkToShow.name}"/>"/>
+					
+					
+					
 					</p>
 					
 					
 					
 					
 					<p><strong>Location: </strong><c:out value="${parkToShow.location}"/></p>
-					<p><c:out value="${parkToShow.description}"/></p>				
-		
+					<p><c:out value="${parkToShow.description}"/></p>	
+					
+					<h3>
+						<c:url var="parkWeatherHref" value="/parkWeather">
+							<c:param name="parkCode" value="${parkToShow.parkCode}" />
+						</c:url>
+						<a href="${parkWeatherHref}">Click for the weather forecast at <c:out value="${parkToShow.name}"/></a>
+					</h3>			
+					
+					<ul>
+						<li>Acreage: <c:out value="${parkToShow.acreage}"/></li>
+						<li>Elevation: <c:out value="${parkToShow.elevation}"/></li>
+						<li>Miles of trail: <c:out value="${parkToShow.milesOfTrail}"/></li>
+						<li>Number of campsites: <c:out value="${parkToShow.numberOfCampsites}"/></li>
+						<li>Year founded: <c:out value="${parkToShow.yearFounded}"/></li>
+						<li>Climate: <c:out value="${parkToShow.climate}"/></li> 
+						<li>Annual Visitors: <c:out value="${parkToShow.annualVisitorCount}"/></li>
+						<li>Quote: <c:out value="${parkToShow.quote}"/><c:out value="${parkToShow.quoteSource}"/> </li>
+				
+						<li>Entry Fee: <c:out value="${parkToShow.entryFee}"/></li>
+						<li>Number of species: <c:out value="${parkToShow.numberOfSpecies}"/></li>
+						 
+						
+					</ul>
 		
 		
 		

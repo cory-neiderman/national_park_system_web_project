@@ -36,8 +36,7 @@ public class ParkController {
 									 @RequestParam(name="parkCode") String parkCode) {
 		Park parkToShow = parkDAO.findParkByCode(parkCode);
 		modelParkDetail.put("parkToShow", parkToShow);
-		
-	System.out.println(parkCode);
+	
 		return "parkDetail";
 	}
 

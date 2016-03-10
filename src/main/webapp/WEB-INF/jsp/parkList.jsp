@@ -1,6 +1,7 @@
 <!DOCTYPE>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 
 <html>
@@ -19,7 +20,8 @@
 		<ul>
 			<c:forEach var="park" items="${listOfParks}">
 				<li class="park">
-					<c:url var="parkImgSrc" value="/img/parks/${park.parkCode}.jpg" />
+					<c:set var="parkImageName" value="${park.parkCode}"/>
+					<c:url var="parkImgSrc" value="/img/parks/${fn:toLowerCase(parkImageName)}.jpg" />
 					<img src="${parkImgSrc}" alt="Picture of <c:out value="${park.name}"/>"/>
 					
 					<h3>
