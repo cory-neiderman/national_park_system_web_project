@@ -14,6 +14,7 @@ import com.techelevator.model.ParkWeatherDAO;
 import com.techelevator.model.SimpleParkDAO;
 import com.techelevator.model.SimpleParkWeatherDAO;
 import com.techelevator.model.Weather;
+import com.techelevator.model.WeatherForecast;
 
 
 
@@ -22,10 +23,12 @@ public class ParkWeatherController {
 	
 	private ParkWeatherDAO parkWeatherDAO;
 	private ParkDAO parkDAO;
+	private WeatherForecast weatherForecast;
 	
 	public ParkWeatherController(){
 		parkWeatherDAO = new SimpleParkWeatherDAO();
 		parkDAO = new SimpleParkDAO();
+		
 	}
 	
 
@@ -36,10 +39,11 @@ public class ParkWeatherController {
 		Park parkToShow = parkDAO.findParkByCode(parkCode);
 		modelWeatherDetail.put("parkToShow", parkToShow); 
 		
-		Weather today = parkWeatherDAO.findWeatherByCode(parkCode);
-		List<Weather> weatherList = parkWeatherDAO.readAllWeather();
+		//Weather today = parkWeatherDAO.findWeatherByCode(parkCode);
+		WeatherForecast weatherForecast = new WeatherForecast(parkCode);
+		List<Weather> weatherList = weatherForecast.getRequestedParkForecast();
 		modelWeatherDetail.put("weatherList", weatherList);
-		modelWeatherDetail.put("today", today);
+		//modelWeatherDetail.put("today", today);
 	
 		return "parkWeather";
 	}

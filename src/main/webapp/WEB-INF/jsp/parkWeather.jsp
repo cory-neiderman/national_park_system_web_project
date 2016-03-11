@@ -23,13 +23,21 @@
 		
 		
 		<div class="today"> 
-		<p>${today.high}</p>
-		<p>${today.low}</p>
-		<p>${today.forecast}</p>
+		<h2>Today's Weather</h2>
+		<p><strong>High:</strong>${today.high}</p>
+		<p><strong>Low:</strong>${today.low}</p>
+		<p><strong>Forecast:</strong>${today.forecast}</p>
+		
+		<p>
+					<c:set var="weatherImageName" value="${today.forecast}"/>
+					<c:url var="parkWeatherSrc" value="/img/weather/${weatherImageName}.png" />
+					<img src="${parkWeatherSrc}" alt="Picture of <c:out value="${today.forecast}"/>"/>
+	
+					</p>
 		</div>
 		
 		
-		<table>
+		<table class="weatherDisplay">
 		<tr>
 			<th></th>
 			<th>Day 1</th>
@@ -38,25 +46,27 @@
 			<th>Day 4</th>
 		</tr>
 		<tr>
-			<td>Low</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			
+			
+			<th>Low</th>
+			<c:forEach var="counter" begin="1" end="4">
+			<td>${weatherList[counter].low}</td>
+		</c:forEach>
+		
+		
+			
 		</tr>
 		<tr>
-			<td>High</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<th>High</th>
+			<c:forEach var="counter" begin="1" end="4">
+			<td>${weatherList[counter].high}</td>
+		</c:forEach>
 		</tr>
 		<tr>
-			<td>Forecast</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<th>Forecast</th>
+			<c:forEach var="counter" begin="1" end="4">
+			<td>${weatherList[counter].forecast}</td>
+		</c:forEach>
 		</tr>
 		</table><br>
 		

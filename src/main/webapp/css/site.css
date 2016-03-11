@@ -17,3 +17,12 @@ body{
 li img{
 	width: 100%;
 }
+
+table, th, td {
+	font-weight: normal;
+    border: 1px solid black;
+}
+
+table, th{
+	font-weight: bold;
+}
