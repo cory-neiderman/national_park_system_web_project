@@ -152,4 +152,29 @@ public class Park {
 		this.parkWeatherList = parkWeatherList;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((parkCode == null) ? 0 : parkCode.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Park other = (Park) obj;
+		if (parkCode == null) {
+			if (other.parkCode != null)
+				return false;
+		} else if (!parkCode.equals(other.parkCode))
+			return false;
+		return true;
+	}
+
 }

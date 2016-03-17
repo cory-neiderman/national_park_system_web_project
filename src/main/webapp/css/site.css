@@ -26,3 +26,11 @@ table, th, td {
 table, th{
 	font-weight: bold;
 }
+
+.tablePic img{
+	height: 80px;
+	width: 80px;
+}
+.suggestion{
+	color: blue;
+}

@@ -13,17 +13,13 @@ import java.util.List;
 
 public class FileSystemParkDAO implements ParkDAO{
 	
+	private List<Park> parkList; 
 	private BufferedReader inputReader;
 	
-	
-	
 	public FileSystemParkDAO(InputStream input){
+		parkList = new ArrayList<>();
 		InputStreamReader reader = new InputStreamReader(input);
-		this.inputReader = new BufferedReader(reader);
-	}
-	
-	public List<Park> readAllParks(){
-		List<Park> results = new ArrayList<>();
+		inputReader = new BufferedReader(reader);
 		throwAwayHeaderLine();
 		String line = readNextLine();
 		
@@ -31,22 +27,25 @@ public class FileSystemParkDAO implements ParkDAO{
 			String[] fields = line.split("\t");
 			Park thePark = new Park(fields[0]);
 			thePark.setName(fields[1]);
-			results.add(thePark);
+			
 			
 			thePark.setLocation(fields[2]);
+			parkList.add(thePark);
 			
 			line = readNextLine();
 			
 		}
-		
-		return results;
-		
 	}
-
+	
+	@Override
+	public List<Park> readAllParks(){
+		return parkList;
+	}
+	
 	private void throwAwayHeaderLine() {
 		readNextLine();
 	}
-
+	
 	private String readNextLine() {
 		String line = null;
 		try{
@@ -57,10 +56,17 @@ public class FileSystemParkDAO implements ParkDAO{
 		return line;
 	}
 
+	
+
 	@Override
 	public Park findParkByCode(String parkCode) {
-		// TODO Auto-generated method stub
-		return null;
+		Park desired = null;
+		for(Park p : parkList){
+			if(p.getParkCode().equals(parkCode)){
+				desired = p;
+			}
+		}
+		return desired;
 	}
 
 }

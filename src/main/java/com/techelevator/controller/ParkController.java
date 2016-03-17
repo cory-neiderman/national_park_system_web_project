@@ -26,7 +26,7 @@ public class ParkController {
 		InputStream parkDataInputStream = this.getClass().getResourceAsStream("/data/Parks.tsv");
 		parkDAO= new FileSystemParkDAO(parkDataInputStream);
 		
-		//parkDAO = new SimpleParkDAO();
+		
 	}
 	
 	

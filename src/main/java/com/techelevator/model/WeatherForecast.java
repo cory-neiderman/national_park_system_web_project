@@ -4,26 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WeatherForecast {
-	private List<Weather> requestedParkForecast;
+	private List<Weather> weatherList;
 	private String parkCode;
-	private SimpleParkWeatherDAO weatherList;
 	
 	public WeatherForecast(String parkCode){
-		requestedParkForecast=new ArrayList<>();
 		this.parkCode=parkCode;
+		weatherList = new ArrayList<>();
 	}
 	
-	public void addWeather(Weather weather){
-		for(Weather w: weatherList.readAllWeather()){
-			if(w.getParkCode().equals(parkCode)){
-				requestedParkForecast.add(w);
-			}
-		}
+	public void addDailyWeather(Weather dailyWeather){
+		weatherList.add(dailyWeather);
+	}
+	
+	public List<Weather> getWeatherForecast(){
+		return weatherList;
+
+	}
+
+	public String getParkCode() {
 		
+		return parkCode;
 	}
-	
-	public List<Weather> getRequestedParkForecast(){
-		return requestedParkForecast;
-	}
-	
+
 }
