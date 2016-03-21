@@ -12,31 +12,31 @@ public class SimpleParkWeatherDAO implements ParkWeatherDAO{
 		
 		WeatherForecast weatherForecastGNP = new WeatherForecast("GNP");
 		
-		Weather weatherGNPDay1= new Weather("GNP");
+		Weather weatherGNPDay1= new Weather("GNP", "placeholder");
 		weatherGNPDay1.setHigh("85");
 		weatherGNPDay1.setLow("50");
 		weatherGNPDay1.setForecast("sunny");
 		weatherForecastGNP.addDailyWeather(weatherGNPDay1);
 		
-		Weather weatherGNPDay2= new Weather("GNP");
+		Weather weatherGNPDay2= new Weather("GNP","placeholder");
 		weatherGNPDay2.setHigh("80");
 		weatherGNPDay2.setLow("45");
 		weatherGNPDay2.setForecast("cloudy");
 		weatherForecastGNP.addDailyWeather(weatherGNPDay2);
 		
-		Weather weatherGNPDay3= new Weather("GNP");
+		Weather weatherGNPDay3= new Weather("GNP","placeholder");
 		weatherGNPDay3.setHigh("95");
 		weatherGNPDay3.setLow("65");
 		weatherGNPDay3.setForecast("thunderstorms");
 		weatherForecastGNP.addDailyWeather(weatherGNPDay3);
 		
-		Weather weatherGNPDay4= new Weather("GNP");
+		Weather weatherGNPDay4= new Weather("GNP","placeholder");
 		weatherGNPDay4.setHigh("75");
 		weatherGNPDay4.setLow("35");
 		weatherGNPDay4.setForecast("partly cloudy");
 		weatherForecastGNP.addDailyWeather(weatherGNPDay4);
 		
-		Weather weatherGNPDay5= new Weather("GNP");
+		Weather weatherGNPDay5= new Weather("GNP","placeholder");
 		weatherGNPDay5.setHigh("82");
 		weatherGNPDay5.setLow("54");
 		weatherGNPDay5.setForecast("sunny");
@@ -47,31 +47,31 @@ public class SimpleParkWeatherDAO implements ParkWeatherDAO{
 		
 		WeatherForecast weatherForecastGCNP = new WeatherForecast("GCNP");
 		
-		Weather weatherGCNPDay1= new Weather("GCNP");
+		Weather weatherGCNPDay1= new Weather("GCNP","placeholder");
 		weatherGCNPDay1.setHigh("50");
 		weatherGCNPDay1.setLow("24");
 		weatherGCNPDay1.setForecast("snow");
 		weatherForecastGCNP.addDailyWeather(weatherGCNPDay1);
 		
-		Weather weatherGCNPDay2= new Weather("GCNP");
+		Weather weatherGCNPDay2= new Weather("GCNP","placeholder");
 		weatherGCNPDay2.setHigh("65");
 		weatherGCNPDay2.setLow("32");
 		weatherGCNPDay2.setForecast("cloudy");
 		weatherForecastGCNP.addDailyWeather(weatherGCNPDay2);
 		
-		Weather weatherGCNPDay3= new Weather("GCNP");
+		Weather weatherGCNPDay3= new Weather("GCNP","placeholder");
 		weatherGCNPDay3.setHigh("75");
 		weatherGCNPDay3.setLow("42");
 		weatherGCNPDay3.setForecast("partly cloudy");
 		weatherForecastGCNP.addDailyWeather(weatherGCNPDay3);
 		
-		Weather weatherGCNPDay4= new Weather("GCNP");
+		Weather weatherGCNPDay4= new Weather("GCNP","placeholder");
 		weatherGCNPDay4.setHigh("45");
 		weatherGCNPDay4.setLow("27");
 		weatherGCNPDay4.setForecast("sunny");
 		weatherForecastGCNP.addDailyWeather(weatherGCNPDay4);
 		
-		Weather weatherGCNPDay5= new Weather("GCNP");
+		Weather weatherGCNPDay5= new Weather("GCNP","placeholder");
 		weatherGCNPDay5.setHigh("86");
 		weatherGCNPDay5.setLow("48");
 		weatherGCNPDay5.setForecast("thunderstorms");

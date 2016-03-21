@@ -125,7 +125,7 @@
 			 	</tr>
 			 	<c:forEach items="${allVotes.allVotes}" var="aVote">
 			 	<tr>
-			 		<td>${aVote.key.park.name}</td>
+			 		<td>${aVote.key.parkName}</td>
 			 		<td>${aVote.value}</td>
 			 	</tr>
 			 	</c:forEach>

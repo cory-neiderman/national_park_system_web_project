@@ -1,5 +1,6 @@
 package com.techelevator.controller;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.techelevator.model.AllVotes;
+import com.techelevator.model.FileSystemAllVotesDAO;
 import com.techelevator.model.FileSystemParkDAO;
 import com.techelevator.model.FileSystemWeatherDAO;
 import com.techelevator.model.Park;
@@ -37,7 +38,7 @@ public class ParkWeatherController {
 	private ParkWeatherDAO parkWeatherDAO;
 	private ParkWeatherDAO parkWeatherCelsiusDAO;
 	private ParkDAO parkDAO;
-	private AllVotes allVotes;
+	private FileSystemAllVotesDAO allVotesDAO;
 	
 	
 	public ParkWeatherController(){
@@ -55,7 +56,10 @@ public class ParkWeatherController {
 		InputStream parkDataInputStream = this.getClass().getResourceAsStream("/data/Parks.tsv");
 		parkDAO = new FileSystemParkDAO(parkDataInputStream);
 		
-		allVotes = new AllVotes();
+		InputStream surveyDataInputStream = this.getClass().getResourceAsStream("/data/SurveyResults.tsv");
+		allVotesDAO = new FileSystemAllVotesDAO(surveyDataInputStream);
+		
+		
 	}
 	
 
@@ -112,8 +116,13 @@ public class ParkWeatherController {
 		modelWeatherDetail.put("parkChoice", favoritePark);
 		Park votedPark = new Park(favoritePark);
 		SurveyVote newVote = new SurveyVote(votedPark);
-		allVotes.addNewVote(newVote);
-		modelWeatherDetail.put("allVotes", allVotes);
+		try {
+			allVotesDAO.addNewVote(newVote);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		modelWeatherDetail.put("allVotes", allVotesDAO);
 		
 		
 		
